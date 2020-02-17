@@ -1,9 +1,11 @@
 package be.ehb.tabpasbar.fragments;
 
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.preference.PreferenceManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,9 +23,14 @@ public class OrderFragment extends Fragment {
     private View.OnClickListener orderListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Toast.makeText(getActivity(), "Order confirmed", Toast.LENGTH_LONG).show();
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+            String locationKey = getResources().getString(R.string.pref_location);
+            String selectedLocation = prefs.getString(locationKey, "Dilbeek");
+
+            Toast.makeText(getActivity(), "Order from "+selectedLocation+" confirmed", Toast.LENGTH_LONG).show();
         }
     };
+
 
     public OrderFragment() {
         // Required empty public constructor
