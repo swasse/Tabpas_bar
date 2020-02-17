@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Tabpas bar</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="str_info_title">Info</string>
+    <string name="str_order_title">Place order</string>
+    <string name="str_btn_order">Confirm</string>
+</resources>
